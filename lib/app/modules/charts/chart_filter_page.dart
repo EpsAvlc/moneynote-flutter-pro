@@ -146,16 +146,6 @@ class ChartFilterPage extends StatelessWidget {
               label: Text(LocaleKeys.chart_searchTime4.tr)
           ),
         ),
-        // SizedBox(
-        //   width: double.infinity,
-        //   child: ElevatedButton.icon(
-        //       icon: const Icon(Icons.schedule),
-        //       onPressed: () {
-        //         Get.find<ChartsController>().setTime5();
-        //       },
-        //       label: Text(LocaleKeys.chart_searchTime5.tr)
-        //   ),
-        // ),
       ],
     );
   }

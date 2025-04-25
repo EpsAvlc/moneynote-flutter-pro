@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:intl/intl.dart';
+
 import 'chart_filter_page.dart';
 import 'widgets/circular_legend.dart';
 import '/app/core/utils/widget_util.dart';
@@ -135,17 +137,33 @@ class _ChartsPageState extends State<ChartsPage> with TickerProviderStateMixin {
   }
 
   String title(int index) {
+    String ret = '';
     switch (index) {
       case 0:
-        return LocaleKeys.chart_expenseCategory.tr;
+        ret = LocaleKeys.chart_expenseCategory.tr;
       case 1:
-        return LocaleKeys.chart_incomeCategory.tr;
+        ret = LocaleKeys.chart_incomeCategory.tr;
       case 2:
-        return LocaleKeys.chart_assetCategory.tr;
+        ret = LocaleKeys.chart_assetCategory.tr;
       case 3:
-        return LocaleKeys.chart_debtCategory.tr;
+        ret = LocaleKeys.chart_debtCategory.tr;
     }
-    return '';
+    dynamic minTime = Get.find<ChartsController>().query["minTime"];
+    String minTimeStr = "";
+    if (minTime != null) {
+      minTimeStr = DateFormat('yyyy/MM/dd').format(DateTime.fromMillisecondsSinceEpoch(minTime));
+    }
+    dynamic maxTime = Get.find<ChartsController>().query["maxTime"];
+    String maxTimeStr = "";
+    if (maxTime != null) {
+      maxTimeStr = DateFormat('yyyy/MM/dd').format(DateTime.fromMillisecondsSinceEpoch(maxTime));
+    }
+    if (minTimeStr == "" || maxTimeStr == "") {
+      ret = "";
+    } else {
+      ret = "$minTimeStr-$maxTimeStr";
+    }
+    return ret;
   }
 
 }
