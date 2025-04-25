@@ -15,7 +15,7 @@ class PopupMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final defaultStyle = Theme.of(context).textTheme.bodyText2;
+    final defaultStyle = Theme.of(context).textTheme.bodyMedium;
     final activeStyle = defaultStyle!.copyWith(color: Theme.of(context).colorScheme.secondary);
     return PopupMenuButton<String>(
       onSelected: onSelected,

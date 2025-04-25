@@ -108,6 +108,7 @@ class LocaleKeys {
   static const flow_order1 = 'flow_order1';
   static const flow_order2 = 'flow_order2';
   static const flow_filterPageTitle = 'flow_filterPageTitle';
+  static const flow_periodicalFilterPageTitle = 'flow_periodicalFilterPageTitle';
   static const flow_minAmount = 'flow_minAmount';
   static const flow_maxAmount = 'flow_maxAmount';
   static const flow_type = 'flow_type';
@@ -243,6 +244,7 @@ class Locales {
     'flow_order1': 'Order By CreateTime',
     'flow_order2': 'Order By Amount',
     'flow_filterPageTitle': 'Filter Balance Flow',
+    'flow_periodicalFilterPageTitle': 'Filter Balance Periodically',
     'flow_minAmount': 'Start Amount',
     'flow_maxAmount': 'End Amount',
     'flow_type': 'Type',
@@ -279,8 +281,8 @@ class Locales {
     'chart_totalAmount': 'Total Amount',
     'chart_searchTime1': 'Within 30 days',
     'chart_searchTime2': 'Within 1 year',
-    'chart_searchTime3': 'This Month',
-    'chart_searchTime4': 'This Year',
+    'chart_searchTime3': 'Search By Month',
+    'chart_searchTime4': 'Search By Year',
     'chart_searchTime5': 'Last Year',
     'error_empty': 'It is required',
     'error_format': 'Format error',
@@ -378,6 +380,7 @@ class Locales {
     'flow_order1': '按时间排序',
     'flow_order2': '按金额排序',
     'flow_filterPageTitle': '搜索账单',
+    'flow_periodicalFilterPageTitle': '筛选账单',
     'flow_minAmount': '起始金额',
     'flow_maxAmount': '终止金额',
     'flow_type': '账单类型',
@@ -412,8 +415,8 @@ class Locales {
     'chart_totalAmount': '总金额',
     'chart_searchTime1': '30天内',
     'chart_searchTime2': '1年内',
-    'chart_searchTime3': '本月',
-    'chart_searchTime4': '今年',
+    'chart_searchTime3': '按月搜索',
+    'chart_searchTime4': '按年搜索',
     'chart_searchTime5': '去年',
     'error_empty': '请输入',
     'error_format': '格式错误',

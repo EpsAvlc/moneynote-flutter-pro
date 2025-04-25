@@ -100,15 +100,21 @@ class ChartsController extends BaseController {
     update();
   }
 
-  void setTime3() {
-    query['minTime'] = DateTime.utc(DateTime.now().year, DateTime.now().month, 1).millisecondsSinceEpoch;
-    query['maxTime'] = DateTime.now().millisecondsSinceEpoch;
+  void setTime3(DateTime datetime) {
+    query['minTime'] = DateTime.utc(datetime.year, datetime.month, 1).millisecondsSinceEpoch;
+    int month = datetime.month;
+    int year = datetime.year;
+    int nextMonth = month == 12 ? 1 : month + 1;
+    int nextYear = month == 12 ? year + 1 : year;
+    DateTime lastDay = DateTime(nextYear, nextMonth, 1);
+    query['maxTime'] = lastDay.millisecondsSinceEpoch;
     update();
   }
 
-  void setTime4() {
-    query['minTime'] = DateTime.utc(DateTime.now().year, 1, 1).millisecondsSinceEpoch;
-    query['maxTime'] = DateTime.now().millisecondsSinceEpoch;
+  void setTime4(int year) {
+    query['minTime'] = DateTime.utc(year, 1, 1).millisecondsSinceEpoch;
+    DateTime lastDay = DateTime.utc(year+1, 1, 1);
+    query['maxTime'] = lastDay.millisecondsSinceEpoch;
     update();
   }
 

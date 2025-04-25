@@ -12,6 +12,7 @@ class MyFormDate extends StatefulWidget {
   final Function(int value) onChange;
   final bool required;
   final bool andTime;
+  final bool monthYear;
   final bool allowClear;
   final Function? onClear;
 
@@ -22,6 +23,7 @@ class MyFormDate extends StatefulWidget {
     required this.onChange,
     this.required = false,
     this.andTime = true,
+    this.monthYear = false,
     this.allowClear = false,
     this.onClear,
   });
@@ -90,7 +92,7 @@ class _MyFormDateState extends State<MyFormDate> {
             decoration: AppTextStyle.inputDecoration,
             onTap: () => _showDialog(CupertinoDatePicker(
               initialDateTime: DateTime.fromMillisecondsSinceEpoch(initValue),
-              mode: widget.andTime ? CupertinoDatePickerMode.dateAndTime : CupertinoDatePickerMode.date,
+              mode: widget.monthYear? CupertinoDatePickerMode.monthYear : widget.andTime ? CupertinoDatePickerMode.dateAndTime : CupertinoDatePickerMode.date,
               use24hFormat: true,
               // This is called when the user changes the date.
               onDateTimeChanged: (DateTime newDate) => widget.onChange(newDate.millisecondsSinceEpoch),
